@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { TripsSchedulledComponent } from './trips-schedulled/trips-schedulled.component';
 import { RootComponent } from './root/root.component';
-import {MatGridList} from "@angular/material/grid-list";
+import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -11,10 +11,11 @@ import {MatGridList} from "@angular/material/grid-list";
     TripsSchedulledComponent,
     RootComponent
   ],
-    imports: [
-        BrowserModule,
-        MatGridList
-    ],
+  imports: [
+    BrowserModule,
+    MatGridList,
+    MatGridTile
+  ],
   exports: [
     FrontPageComponent,
     TripsSchedulledComponent,
