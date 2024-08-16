@@ -4,146 +4,32 @@
     <div class="w-full container 2xl:px-36">
       <div>
         <p class="text-color4 uppercase px-5">Choose your place</p>
-        <p class="text-5xl font-secondary text-color3 px-5">Popular <span class="text-color1">Tours</span></p>
-        <mat-grid-list cols="3" rowHeight="1:1" [gutterSize]="'20px'" class="w-full md:justify-between gap-10 px-6 xl:px-0 py-8 lg:px-3 ">
+        <p class="text-5xl font-secondary text-color3 px-5">Available <span class="text-color1">Tours</span></p>
+        <mat-grid-list *ngFor="let trip of getTrips()"
+                       cols="3"
+                       rowHeight="1:1" [gutterSize]="'20px'"
+                       class="w-full md:justify-between gap-10 px-6 xl:px-0 py-8 lg:px-3 ">
           <mat-grid-tile>
             <figure class="w-full h-full relative photo transition-all duration-1000 ">
               <div class="w-[100%] h-[100%] bottom-photo absolute bg-white flex flex-col justify-center px-5">
-                <p class="text-3xl text-color3 capitalize font-secondary">Maldives tour</p>
-                <p class="text-color1 mb-4">$2.500 / per persons</p>
-                <p class="text-color6">Travel non lorem ac erat susce bibendum nulla facilisi. Sedeuter nunc voluat miss conse viventa amet vestibulum.</p>
+                <p class="text-3xl text-color3 capitalize font-secondary">{{trip.name}}</p>
+                <p class="text-color1 mb-4">{{trip.price}}€ / per person</p>
+                <p class="text-color6 overflow-hidden">{{trip.description}}</p>
                 <div class="flex flex-wrap my-4">
-                  <div class="w-[50%] flex"><i class="bi bi-clock text-color4"></i><p class="text-color6 ms-2">12 Days</p></div>
-                  <div class="w-[50%] flex"><i class="bi bi-geo-alt text-color4"></i><p class="text-color6 ms-2">Maldives</p></div>
-                  <div class="w-[50%] flex"><i class="bi bi-person text-color4"></i><p class="text-color6 ms-2">12+</p></div>
-                  <div class="w-[50%] flex"><i class="bi bi-emoji-smile text-color4"></i><p class="text-color6 ms-2">9.8 Superb</p></div>
+                  <div class="w-[50%] flex"><i class="bi bi-clock text-color4"></i><p class="text-color6 ms-2">{{trip.start_date}} to {{trip.end_date}}</p></div>
+                  <div class="w-[50%] flex"><i class="bi bi-geo-alt text-color4"></i><p class="text-color6 ms-2">{{trip.country}}</p></div>
+                  <div class="w-[50%] flex"><i class="bi bi-person text-color4"></i><p class="text-color6 ms-2">{{trip.num_people}}</p></div>
                 </div>
                 <a href="" class="underline decoration-color1 text-color6 flex mb-2">Tour details</a>
               </div>
-              <img src="assets/img/22.jpeg" alt="" class="h-full w-full object-cover brightness-75 absolute">
-              <p class="absolute uppercase text-white bg-color3 px-4 py-1 right-1 top-12 rotate-[-90deg] ">Maldives</p>
+              <img src="assets/img/{{trip.country}}/thumbnail.jpg" alt="" class="h-full w-full object-cover brightness-75 absolute">
+              <p class="absolute uppercase text-white bg-color3 px-4 py-1 right-1 top-12 rotate-[-90deg] ">{{trip.country}}</p>
               <figcaption class="absolute text-white bottom-8 right-10 fig">
-                <p class="capitalize font-secondary text-3xl">Maldives tours</p>
-                <p class="text-right">$2500 / per persons</p>
+                <p class="capitalize font-secondary text-3xl">{{trip.name}}</p>
+                <p class="text-right">{{trip.price}}€ / per person</p>
             </figcaption>
           </figure>
           </mat-grid-tile>
-
-          <mat-grid-tile>
-            <figure class="w-full h-full relative photo transition-all duration-1000 ">
-            <div class="w-[100%] h-[100%] bottom-photo absolute bg-white flex flex-col justify-center px-5">
-              <p class="text-3xl text-color3 capitalize font-secondary">Roma</p>
-              <p class="text-color1 mb-4">$1.300 / per persons</p>
-              <p class="text-color6">Travel non lorem ac erat susce bibendum nulla facilisi. Sedeuter nunc voluat miss conse viventa amet vestibulum.</p>
-              <div class="flex flex-wrap my-4">
-                <div class="w-[50%] flex"><i class="bi bi-clock text-color4"></i><p class="text-color6 ms-2">6 Days</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-geo-alt text-color4"></i><p class="text-color6 ms-2">Italy</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-person text-color4"></i><p class="text-color6 ms-2">10+</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-emoji-smile text-color4"></i><p class="text-color6 ms-2"> 9.5 Superb</p></div>
-              </div>
-              <a href="" class="underline decoration-color1 text-color6 flex mb-2">Tour details</a>
-            </div>
-            <img src="assets/img/italy1.jpeg" alt="" class="h-full w-full object-cover brightness-75 absolute">
-            <p class="absolute uppercase text-white bg-color3 px-4 py-1 right-1 top-12 rotate-[-90deg] ">italy</p>
-            <figcaption class="absolute text-white bottom-8 right-10 fig">
-              <p class="capitalize font-secondary text-3xl">Roma</p>
-              <p class="text-right">$1.300 / per persons</p>
-            </figcaption>
-          </figure>
-          </mat-grid-tile>
-
-          <mat-grid-tile>
-            <figure class="w-full h-full relative photo transition-all duration-1000">
-            <div class="w-[100%] h-[100%] bottom-photo absolute bg-white flex flex-col justify-center px-5">
-              <p class="text-3xl text-color3 capitalize font-secondary">France</p>
-              <p class="text-color1 mb-4">$400 / per persons</p>
-              <p class="text-color6">Travel non lorem ac erat susce bibendum nulla facilisi. Sedeuter nunc voluat miss conse viventa amet vestibulum.</p>
-              <div class="flex flex-wrap my-4">
-                <div class="w-[50%] flex"><i class="bi bi-clock text-color4"></i><p class="text-color6 ms-2">10 Days</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-geo-alt text-color4"></i><p class="text-color6 ms-2">France</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-person text-color4"></i><p class="text-color6 ms-2">6+</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-emoji-smile text-color4"></i><p class="text-color6 ms-2">9.5 Superb</p></div>
-              </div>
-              <a href="" class="underline decoration-color1 text-color6 flex mb-2">Tour details</a>
-            </div>
-            <img src="assets/img/france1.jpg" alt="" class="h-full w-full object-cover brightness-75 absolute">
-            <p class="absolute uppercase text-white bg-color3 px-4 py-1 right-1 top-12 rotate-[-90deg] ">France</p>
-            <figcaption class="absolute text-white bottom-8 right-10 fig">
-              <p class="capitalize font-secondary text-3xl">France</p>
-              <p class="text-right">$400 / per persons</p>
-            </figcaption>
-          </figure>
-          </mat-grid-tile>
-
-          <mat-grid-tile>
-            <figure class="w-full h-full relative photo transition-all duration-1000 ">
-            <div class="w-[100%] h-[100%] bottom-photo absolute bg-white flex flex-col justify-center px-5">
-              <p class="text-3xl text-color3 capitalize font-secondary">greece tour</p>
-              <p class="text-color1 mb-4">$500 / per persons</p>
-              <p class="text-color6">Travel non lorem ac erat susce bibendum nulla facilisi. Sedeuter nunc voluat miss conse viventa amet vestibulum.</p>
-              <div class="flex flex-wrap my-4">
-                <div class="w-[50%] flex"><i class="bi bi-clock text-color4"></i><p class="text-color6 ms-2">10 Days</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-geo-alt text-color4"></i><p class="text-color6 ms-2">greece</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-person text-color4"></i><p class="text-color6 ms-2">12+</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-emoji-smile text-color4"></i><p class="text-color6 ms-2">9.3 Superb</p></div>
-              </div>
-              <a href="" class="underline decoration-color1 text-color6 flex mb-2">Tour details</a>
-            </div>
-            <img src="assets/img/greece1.jpg" alt="" class="h-full w-full object-cover brightness-75 absolute">
-            <p class="absolute uppercase text-white bg-color3 px-4 py-1 right-[-15px] top-12 rotate-[-90deg] ">greece</p>
-            <figcaption class="absolute text-white bottom-8 right-10 fig">
-              <p class="capitalize font-secondary text-3xl">greece tours</p>
-              <p class="text-right">$500 / per persons</p>
-            </figcaption>
-          </figure>
-          </mat-grid-tile>
-
-          <mat-grid-tile>
-            <figure class="w-full h-full relative photo transition-all duration-1000 ">
-            <div class="w-[100%] h-[100%] bottom-photo absolute bg-white flex flex-col justify-center px-5">
-              <p class="text-3xl text-color3 capitalize font-secondary">Canada tour</p>
-              <p class="text-color1 mb-4">$300 / per persons</p>
-              <p class="text-color6">Travel non lorem ac erat susce bibendum nulla facilisi. Sedeuter nunc voluat miss conse viventa amet vestibulum.</p>
-              <div class="flex flex-wrap my-4">
-                <div class="w-[50%] flex"><i class="bi bi-clock text-color4"></i><p class="text-color6 ms-2">7 Days</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-geo-alt text-color4"></i><p class="text-color6 ms-2">canada</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-person text-color4"></i><p class="text-color6 ms-2">10+</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-emoji-smile text-color4"></i><p class="text-color6 ms-2"> 9.3 Superb</p></div>
-              </div>
-              <a href="" class="underline decoration-color1 text-color6 flex mb-2">Tour details</a>
-            </div>
-            <img src="assets/img/canada1-1.jpeg" alt="" class="h-full w-full object-cover brightness-75 absolute">
-            <p class="absolute uppercase text-white bg-color3 px-4 py-1 right-[-15px] top-12 rotate-[-90deg] ">canada</p>
-            <figcaption class="absolute text-white bottom-8 right-10 fig">
-              <p class="capitalize font-secondary text-3xl">canada tours</p>
-              <p class="text-right">$300 / per persons</p>
-            </figcaption>
-          </figure>
-          </mat-grid-tile>
-
-          <mat-grid-tile>
-            <figure class="w-full h-full relative photo transition-all duration-1000 ">
-            <div class="w-[100%] h-[100%] bottom-photo absolute bg-white flex flex-col justify-center px-5">
-              <p class="text-3xl text-color3 capitalize font-secondary">dubai</p>
-              <p class="text-color1 mb-4">$200 / per persons</p>
-              <p class="text-color6">Travel non lorem ac erat susce bibendum nulla facilisi. Sedeuter nunc voluat miss conse viventa amet vestibulum.</p>
-              <div class="flex flex-wrap my-4">
-                <div class="w-[50%] flex"><i class="bi bi-clock text-color4"></i><p class="text-color6 ms-2">7 Days</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-geo-alt text-color4"></i><p class="text-color6 ms-2">dubai</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-person text-color4"></i><p class="text-color6 ms-2">10+</p></div>
-                <div class="w-[50%] flex"><i class="bi bi-emoji-smile text-color4"></i><p class="text-color6 ms-2">9.8 Superb</p></div>
-              </div>
-              <a href="" class="underline decoration-color1 text-color6 flex mb-2">Tour details</a>
-            </div>
-            <img src="assets/img/11.jpeg" alt="" class="h-full w-full object-cover brightness-75 absolute">
-            <p class="absolute uppercase text-white bg-color3 px-4 py-1 right-[-15px] top-12 rotate-[-90deg] ">dubai</p>
-            <figcaption class="absolute text-white bottom-8 right-10 fig">
-              <div class="capitalize font-secondary text-3xl">dubai</div>
-              <p class="text-right">$200 / per persons</p>
-            </figcaption>
-          </figure>
-          </mat-grid-tile>
-
         </mat-grid-list>
       </div>
     </div>
