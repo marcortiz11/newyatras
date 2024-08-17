@@ -34,7 +34,7 @@ export class TripsSchedulledComponent implements OnInit {
         this.trips = response;
       },
       (error: any) => {
-        console.log(error);
+        console.log("Error");
       },
     );
   }
