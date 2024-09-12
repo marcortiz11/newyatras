@@ -1,0 +1,9 @@
+.container_router_outlet > * {
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.router-outlet {
+  width: 0;
+}

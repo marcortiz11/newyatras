@@ -27,14 +27,13 @@
               },
               {
                 "glob": "**/*",
-                "input": "./src/assets",
+                "input": "src/assets",
                 "output": "assets"
               }
             ],
             "styles": [
               "src/styles.css",
-              "./styles/output.css",
-              "./styles/master.css"
+              "src/assets/styles/master.css"
             ],
             "scripts": []
           },
@@ -93,10 +92,9 @@
               }
             ],
             "styles": [
-              "./src/styles.css",
-              "./styles/output.css",
-              "./styles/bootstrap-icons.css",
-              "./styles/master.css"
+              "src/styles.css",
+              "src/assets/styles/master.css",
+              "src/assets/styles/bootstrap-icons.css"
             ],
             "scripts": []
           }

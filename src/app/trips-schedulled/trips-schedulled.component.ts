@@ -16,7 +16,10 @@ interface Trip {
 @Component({
   selector: 'app-trips-schedulled',
   templateUrl: './trips-schedulled.component.html',
-  styleUrl: './trips-schedulled.component.css'
+  styleUrl: './trips-schedulled.component.css',
+  host: {
+    class: 'w-full flex flex-col'
+  }
 })
 export class TripsSchedulledComponent implements OnInit {
 

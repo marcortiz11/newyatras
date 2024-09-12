@@ -1,11 +1,11 @@
-<div class="w-full h-full flex justify-center bg-color7 py-8">
-  <div class="w-full container 2xl:px-36">
+<div class="h-screen w-full justify-center bg-color7 py-8">
+  <div class="container px-10">
     <div>
       <p class="text-color4 uppercase px-5">Choose your place</p>
       <p class="text-5xl font-secondary text-color3 px-5">Available <span class="text-color1">Tours</span></p>
       <mat-grid-list *ngFor="let trip of getTrips()"
-                     cols="3"
-                     rowHeight="1:1" [gutterSize]="'20px'"
+                     cols="4"
+                     rowHeight="1:1" [gutterSize]="'10px'"
                      class="w-full md:justify-between gap-10 px-6 xl:px-0 py-8 lg:px-3 ">
         <mat-grid-tile>
           <figure class="w-full h-full relative photo transition-all duration-1000 ">
@@ -26,9 +26,9 @@
               <a [routerLink]="['/trip']" class="underline decoration-color1 text-color6 flex mb-2">Tour details</a>
             </div>
             <img src="assets/img/{{trip.country}}/thumbnail.jpg" alt="" class="h-full w-full object-cover brightness-75 absolute">
-            <p class="absolute uppercase text-white bg-color3 px-4 py-1 right-1 top-12 rotate-[-90deg] ">{{trip.country}}</p>
-            <figcaption class="absolute text-white bottom-8 right-10 fig">
-              <p class="capitalize font-secondary text-3xl">{{trip.name}}</p>
+            <p class="absolute uppercase text-white bg-color3 px-4 py-1 right-0 bottom-0 rotate-[-90deg] ">{{trip.country}}</p>
+            <figcaption class="absolute text-white left-5 top-5 fig">
+              <p class="capitalize font-secondary text-2xl">{{trip.name}}</p>
               <p class="text-right">{{trip.price}}€ / per person</p>
           </figcaption>
         </figure>

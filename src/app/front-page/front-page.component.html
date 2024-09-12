@@ -1,4 +1,6 @@
-<div class="h-full w-full bg-header bg-cover bg-no-repeat bg-center bg-color1 bg-blend-multiply bg-opacity-60" >
+
+<div class="h-screen justify-between flex flex-col bg-header bg-cover bg-no-repeat bg-center bg-color1 bg-blend-multiply bg-opacity-60" >
+
   <!-- This is the header of the front page -->
   <div class="w-full flex justify-center">
         <header class="w-[85%]  xl:w-[73%]  container lg:flex justify-between h-[60px]  items-center py-[45px] border-b-[40px] border-white border-opacity-40">
@@ -22,6 +24,7 @@
           </nav>
       </header>
   </div>
+
   <!-- This is title of the front page -->
   <div class="w-full flex justify-center mt-10">
     <div class="w-[700px] md:w-[900px] container">
@@ -29,21 +32,22 @@
         <h1 class="w-full text-center text-white text-5xl md:text-7xl font-secondary uppercase tracking-widest">Explore The World With <span class="travol">YATRAS</span></h1>
     </div>
   </div>
+
   <!-- This is the selection of tour -->
-  <div class="w-full flex justify-center mt-[180px]">
-      <div class=" bg-white bg-opacity-40 container absolute w-[1000px] xl:w-[1200px] h-[100px] flex justify-center items-center backdrop-blur-lg">
-              <div class="w-[950px] xl:w-[1100px]  container h-auto absolute">
+  <footer class="w-full bottom-0">
+      <div class="w-full flex bg-white bg-opacity-40 h-[100px] justify-center items-center backdrop-blur-lg">
+              <div class="w-[950px] xl:w-[1100px] container h-auto absolute">
                       <form action="" class="flex font-primary">
                            <select name="" id="" class="w-full py-5 bg-white  ps-5" >
                                <option value="dest" selected   class="bg-color1 text-white">Age range</option>
                                <option value="it" class="text-stone-600" >25-35</option>
                                <option value="it" class="text-stone-600" >+35</option>
                            </select><br>
-                           <select name="" id="" class="w-full py-5 bg-white  ps-5" >
+                           <select name="" id="" class="w-full py-5 bg-white ps-5" >
                               <option value="dest" selected   class="bg-color1 text-white">Destination</option>
                               <option value="it" class="text-stone-600" >Thailand</option>
                            </select><br>
-                           <select name="" id="" class="w-full py-5 bg-white  ps-5" >
+                           <select name="" id="" class="w-full py-5 bg-white ps-5" >
                                <option value="du" selected   class="bg-color1 text-white">Duration</option>
                                <option value="it" class="text-stone-600" >1 week tour</option>
                                <option value="fr" class="text-stone-600">2 weeks tour</option>
@@ -54,7 +58,8 @@
                       </form>
               </div>
       </div>
-  </div>
+  </footer>
 </div>
 
-<app-trips-schedulled></app-trips-schedulled>
+
+<app-trips-schedulled style="height:100vh"></app-trips-schedulled>
