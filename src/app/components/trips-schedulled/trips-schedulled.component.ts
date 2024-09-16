@@ -1,17 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TripService } from '../api/trip-service.service';
-
-
-interface Trip {
-  name: string,
-  country: string,
-  description: string,
-  start_date: string,
-  end_date: string,
-  price: number,
-  age_range: string,
-  num_people: number
-}
+import { TripService } from '../../api/trip-service.service';
+import { Trip } from '../../interfaces/trip';
 
 @Component({
   selector: 'app-trips-schedulled',

@@ -11,19 +11,19 @@
           <figure class="w-full h-full relative photo transition-all duration-1000 ">
             <div class="w-[100%] h-[100%] bottom-photo absolute bg-white flex flex-col justify-center px-5">
               <p class="text-3xl text-color3 capitalize font-secondary">{{trip.name}}</p>
-              <p class="text-color1 mb-4">{{trip.price}}€ / per person</p>
-              <p class="text-color6 overflow-hidden">{{trip.description}}</p>
-              <div class="flex flex-wrap my-4">
+              <p class="text-color1 mb-2">{{trip.price}}€ / per person</p>
+              <p class="text-color6 overflow-scroll sm:text-xs md:text-sm xl:text-sm">{{trip.description}}</p>
+              <div class="flex flex-wrap my-4 text-sm">
                 Dates: <div class="w-[80%] whitespace-nowrap overflow-hidden">
                           <i class="bi bi-clock text-color4"></i>
                           <p class="text-color6 ms-2">{{trip.start_date}} to {{trip.end_date}}</p>
                       </div>
-                <div class="w-full flex overflow-hidden justify-between">
+                <div class="w-full flex overflow-hidden justify-between text-sm">
                   <div>Country: {{trip.country}}</div>
                   <div>Group: {{trip.num_people}}</div>
                 </div>
               </div>
-              <a [routerLink]="['/trip']" class="underline decoration-color1 text-color6 flex mb-2">Tour details</a>
+              <a [routerLink]="['/trip', trip.id]" class="underline decoration-color1 text-color6 flex mb-2">Tour details</a>
             </div>
             <img src="assets/img/{{trip.country}}/thumbnail.jpg" alt="" class="h-full w-full object-cover brightness-75 absolute">
             <p class="absolute uppercase text-white bg-color3 px-4 py-1 right-0 bottom-0 rotate-[-90deg] ">{{trip.country}}</p>
