@@ -1,4 +1,4 @@
-<div class="w-full h-screen flex justify-center bg-color5">
+<div class="w-full flex justify-center bg-color5">
   <div class="w-full container flex justify-between flex-wrap px-0 2xl:px-36 h-auto py-16 ">
     <div class="w-full lg:w-[50%]  bg-color px-5 ">
       <p class="text-color4 uppercase">Trip to {{trip.country}} </p>
@@ -23,19 +23,46 @@
         </div>
       </div>
 
-      <p class="text-color6">{{trip.description}}</p>
-      <p class="text-color6 my-4">Hotel ut nisl quam nestibulum ac quam nec odio elementum ceisue the miss varius natoque penatibus et magnis dis parturient monte.</p>
-      <div class="flex items-center"> <i class="bi bi-check text-white bg-color4  rounded-[50%] px-2 py-1 me-3"></i> <p class="text-color6">20 Years of Experience</p></div>
-      <div class="flex items-center my-4"> <i class="bi bi-check text-white bg-color4  rounded-[50%] px-2 py-1 me-3"></i> <p class="text-color6">150+ Tour Destinations</p></div>
-      <div class="flex items-center"><i class="bi bi-telephone-forward text-color1 text-2xl me-3"></i><div><p class="text-color6 ">For information</p><p class="text-color6 text-2xl">09188085590</p></div></div>
+      <!-- Trip description -->
+      <div>
+        <h1>Trip description</h1>
+        <p class="text-color6">{{trip.description}}</p>
+      </div>
+
+      <!-- What to bring for Jordan -->
+      <div class="pt-4">
+        <h1>What to bring:</h1>
+        <p class="text-color6">Pasaporte: en vigor y con validez mínima de 6 meses desde la entrada al país. Visado: compra online tu Jordan Pass (asegúrate de hablar antes con el coordinador, cuando cree el grupo de Whatsapp 15 días antes de la salida de tu viaje). Antes de reservar, recuerda visitar la página web del MAEC.</p>
+      </div>
+
     </div>
-    <div class=" w-full lg:w-[50%]   flex flex-col justify-center items-center bg-color5 h-auto pb-8 lg:pb-0 mt-10 lg:mt-0 ">
+
+    <!-- Image carousel -->
+    <div class=" w-full lg:w-[50%] flex flex-col justify-center items-center bg-color5 h-auto pb-8 lg:pb-0 mt-10 lg:mt-0 ">
       <figure class="w-[70%] h-[500px] relative">
         <div class="w-[100%] h-[100%] bg-color4 absolute left-8 top-8"></div>
         <img src="assets/img/{{trip.country}}/description.jpg" alt="" class="w-[100%] h-[100%] absolute z-10 object-cover hover:scale-[.95] transition-all duration-500">
       </figure>
     </div>
+
+    <!-- Inscription to trip -->
+    <div class="w-[100%] h-20 border-2 shadow bg-white rounded-md flex items-center justify-between m-auto mt-10 px-5">
+      <div class="flex">
+        <mat-icon>calendar_month</mat-icon>
+        <p class="pr-2"> First day of the trip: </p>
+        <p class="pr-12 text-color6"> {{trip.start_date | date}}
+        <p class="pr-2"> Last day of the trip: </p>
+        <p class="text-color6"> {{trip.end_date | date}}</p>
+      </div>
+      <div class="flex items-center">
+        <p class="pr-2"> Price per person: </p>
+        <p class="pr-14 text-color6">{{trip.price}}€</p>
+        <a href="#inscription-form" class="bg-color1 p-2 text-white flex items-center justify-center text-[18px] hover:bg-color3 rounded-xl">
+          Join the trip!
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
-<app-trip-inscription-form></app-trip-inscription-form>
+<app-trip-inscription-form id="inscription-form"></app-trip-inscription-form>

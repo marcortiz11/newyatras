@@ -11,6 +11,7 @@ import { provideHttpClient } from '@angular/common/http';
 // Extra
 import { MatGridList, MatGridTile } from "@angular/material/grid-list";
 import { AppRoutingModule } from './app-routing.module';
+import {MatIcon} from "@angular/material/icon";
 
 
 @NgModule({
@@ -20,13 +21,14 @@ import { AppRoutingModule } from './app-routing.module';
     RootComponent,
     TripDescriptionComponent
   ],
-  imports: [
-    BrowserModule,
-    MatGridList,
-    MatGridTile,
-    AppRoutingModule,
-    TripInscriptionFormComponent
-  ],
+    imports: [
+        BrowserModule,
+        MatGridList,
+        MatGridTile,
+        AppRoutingModule,
+        TripInscriptionFormComponent,
+        MatIcon
+    ],
   exports: [
     FrontPageComponent,
     TripsSchedulledComponent,
