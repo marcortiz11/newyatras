@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TripService } from '../../api/trip-service.service';
 import { Trip } from '../../interfaces/trip';
@@ -143,5 +143,9 @@ export class TripDescriptionComponent implements OnInit {
         }
       }),
     ]
+  }
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: "smooth"});
   }
 }

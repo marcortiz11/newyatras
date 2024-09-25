@@ -73,8 +73,7 @@ export class TripInscriptionFormComponent implements OnInit {
         allergies: this.tripInscriptionForm.value.allergies,
         questions: this.tripInscriptionForm.value.questions
       };
-      console.log(inscription);
-      this.inscriptionService.putInscription(this.insciprionMock).subscribe(response => console.log(response));
+      this.inscriptionService.putInscription(inscription).subscribe(response => console.log(response));
     }
   }
 }

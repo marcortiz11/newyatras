@@ -48,21 +48,26 @@
     <!-- Inscription to trip -->
     <div class="w-[100%] h-20 border-2 shadow bg-white rounded-md flex items-center justify-between m-auto mt-10 px-5">
       <div class="flex">
-        <mat-icon>calendar_month</mat-icon>
+        <p class="material-icons pr-1">calendar_month</p>
         <p class="pr-2"> First day of the trip: </p>
         <p class="pr-12 text-color6"> {{trip.start_date | date}}
+        <p class="material-icons pr-1">calendar_month</p>
         <p class="pr-2"> Last day of the trip: </p>
         <p class="text-color6"> {{trip.end_date | date}}</p>
       </div>
       <div class="flex items-center">
+        <p class="material-icons">person</p>
         <p class="pr-2"> Price per person: </p>
         <p class="pr-14 text-color6">{{trip.price}}€</p>
-        <a href="#inscription-form" class="bg-color1 p-2 text-white flex items-center justify-center text-[18px] hover:bg-color3 rounded-xl">
+        <button (click)="scroll(inscriptionForm)" class="bg-color1 p-2 text-white flex items-center justify-center text-[18px] hover:bg-color3 rounded-xl">
           Join the trip!
-        </a>
+        </button>
       </div>
     </div>
   </div>
 </div>
 
-<app-trip-inscription-form id="inscription-form"></app-trip-inscription-form>
+<div #inscriptionForm>
+  <app-trip-inscription-form ></app-trip-inscription-form>
+</div>
+
