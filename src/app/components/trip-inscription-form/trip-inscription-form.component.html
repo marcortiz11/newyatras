@@ -5,67 +5,63 @@
       <p class="text-5xl font-secondary text-color3 px-5">Personal <span class="text-color1">Information</span></p>
 
       <form [formGroup]="tripInscriptionForm" (ngSubmit)="onSubmit()" (change)="formChanged()" class="w-[700px] space-y-8 py-8 mx-auto">
-          <!-- Name -->
-          <div>
-            <label class="block text-color3 font-secondary">Name*</label>
-            <input type="text" formControlName="name"
-                   class="w-full p-2 border border-color3 rounded-md text-color6">
+          <!-- Name, Surnames and DOB -->
+          <div class="flex justify-between">
+            <div class="w-[50%] pr-10">
+              <label class="block text-color3 font-secondary">Name*</label>
+              <input type="text" formControlName="name"
+                     class="w-full p-2 border border-color3 rounded-md text-color6 mr-2">
+            </div>
+            <div class="w-[50%] pr-10">
+              <label class="block text-color3 font-secondary">Surnames*</label>
+              <input type="text" formControlName="surnames"
+                     class="w-full p-2 border border-color3 rounded-md text-color6">
+            </div>
+            <div class="w-[50%]">
+              <label class="block text-color3 font-secondary">Date of Birth*</label>
+              <input type="date" formControlName="dob"
+                     class="w-full p-2 border border-color3 rounded-md text-color6">
+            </div>
           </div>
 
-          <!-- Surnames -->
-          <div>
-            <label class="block text-color3 font-secondary">Surnames*</label>
-            <input type="text" formControlName="surnames"
+          <!-- Location -->
+          <div class="flex justify-between">
+            <div class="w-[33%] pr-10">
+              <label class="block text-color3 font-secondary">Country*</label>
+              <input type="text" formControlName="country"
+                     class="w-full p-2 border border-color3 rounded-md text-color6">
+            </div>
+            <div class="w-[33%] pr-10">
+              <label class="block text-color3 font-secondary">City*</label>
+              <input type="text" formControlName="city"
                    class="w-full p-2 border border-color3 rounded-md text-color6">
+            </div>
+            <div class="w-[33%]">
+              <label class="block text-color3 font-secondary">Address*</label>
+              <input type="text" formControlName="address"
+                   class="w-full p-2 border border-color3 rounded-md text-color6">
+            </div>
           </div>
 
-          <!-- Date of Birth -->
-          <div>
-            <label class="block text-color3 font-secondary">Date of Birth*</label>
-            <input type="date" formControlName="dob"
+          <!-- Contact info: Passport, email, phone -->
+          <div class="flex justify-between">
+            <div class="w-[33%] pr-10">
+              <label class="block text-color3 font-secondary">Passport Id*</label>
+              <input type="text" formControlName="passportId"
                    class="w-full p-2 border border-color3 rounded-md text-color6">
-          </div>
+            </div>
 
-          <!-- Country -->
-          <div>
-            <label class="block text-color3 font-secondary">Country*</label>
-            <input type="text" formControlName="country"
+            <div class="w-[33%] pr-10">
+              <label class="block text-color3 font-secondary">Email*</label>
+              <input type="email" formControlName="email"
                    class="w-full p-2 border border-color3 rounded-md text-color6">
-          </div>
+            </div>
 
-          <!-- City -->
-          <div>
-            <label class="block text-color3 font-secondary">City*</label>
-            <input type="text" formControlName="city"
+            <div class="w-[33%]">
+              <label class="block text-color3 font-secondary">Phone</label>
+              <input type="number" formControlName="phoneNumber"
                    class="w-full p-2 border border-color3 rounded-md text-color6">
-          </div>
-
-          <!-- Address -->
-          <div>
-            <label class="block text-color3 font-secondary">Address*</label>
-            <input type="text" formControlName="address"
-                   class="w-full p-2 border border-color3 rounded-md text-color6">
-          </div>
-
-          <!-- Passport or ID -->
-          <div>
-            <label class="block text-color3 font-secondary">Passport Number / ID*</label>
-            <input type="text" formControlName="passportId"
-                   class="w-full p-2 border border-color3 rounded-md text-color6">
-          </div>
-
-          <!-- Email -->
-          <div>
-            <label class="block text-color3 font-secondary">Email*</label>
-            <input type="email" formControlName="email"
-                   class="w-full p-2 border border-color3 rounded-md text-color6">
-          </div>
-
-          <!-- Phone -->
-          <div>
-            <label class="block text-color3 font-secondary">Phone</label>
-            <input type="number" formControlName="phoneNumber"
-                   class="w-full p-2 border border-color3 rounded-md text-color6">
+            </div>
           </div>
 
           <!-- How many people you bring -->
@@ -77,7 +73,7 @@
 
           <!-- Allergies -->
           <div>
-            <label class="block text-color3 font-secondary">Allergies*</label>
+            <label class="block text-color3 font-secondary">Allergies</label>
             <input type="text" formControlName="allergies"
                    class="w-full p-2 border border-color3 rounded-md text-color6">
           </div>
@@ -92,7 +88,7 @@
             <!-- Submit Button -->
             <div class="flex justify-between items-center">
               <p>{{formStatus}}</p>
-              <button type="submit" [disabled]="!tripInscriptionForm.valid" class="px-5 py-2 w-[30%] bg-color1 text-white font-semibold rounded-md">
+              <button type="submit" class="px-5 py-2 w-[30%] bg-color1 text-white font-semibold rounded-md">
                 Submit
               </button>
           </div>

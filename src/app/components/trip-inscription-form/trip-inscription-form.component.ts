@@ -47,7 +47,7 @@ export class TripInscriptionFormComponent implements OnInit {
       address: ['', Validators.required],
       passportId: ['', Validators.required],
       phoneNumber: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
+      email: ['', [Validators.required, Validators.email]],
       people: ['', Validators.required],
       allergies: [''],
       questions: ['']
@@ -75,7 +75,12 @@ export class TripInscriptionFormComponent implements OnInit {
         questions: this.tripInscriptionForm.value.questions
       };
       this.inscriptionService.putInscription(inscription).subscribe(response => console.log(response));
-      this.formStatus = "Thank you for the inscription! We will contact you soon..."
+      this.formStatus = "Thank you for the inscription! We will contact you soon...";
+      for (const control in this.tripInscriptionForm.controls) {
+        this.tripInscriptionForm.controls[control].reset();
+      }
+    } else {
+      this.formStatus = "Inscription not valid, please fill all the required fields";
     }
   }
 
