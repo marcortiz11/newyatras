@@ -1,6 +1,26 @@
 <div class="w-full flex justify-center bg-color5">
-  <div class="w-full container flex justify-between flex-wrap px-0 2xl:px-36 h-auto py-16 ">
-    <div class="w-full lg:w-[50%]  bg-color px-5 ">
+  <div class="w-full container flex justify-between flex-wrap px-0 2xl:px-36 h-auto">
+    <!-- Inscription to trip -->
+    <div class="w-[100%] h-20 border-2 shadow bg-white rounded-md flex items-center justify-between m-auto mt-10 px-5 mb-16">
+      <div class="flex">
+        <p class="material-icons pr-1">calendar_month</p>
+        <p class="pr-2"> First day of the trip: </p>
+        <p class="pr-12 text-color6"> {{trip.start_date | date}}
+        <p class="material-icons pr-1">calendar_month</p>
+        <p class="pr-2"> Last day of the trip: </p>
+        <p class="text-color6"> {{trip.end_date | date}}</p>
+      </div>
+      <div class="flex items-center">
+        <p class="material-icons">person</p>
+        <p class="pr-2"> Price per person: </p>
+        <p class="pr-14 text-3xl text-red-800 font-bold">{{trip.price}}€</p>
+        <button (click)="scroll(inscriptionForm)" class="bg-color1 p-2 text-white flex items-center justify-center text-[18px] hover:bg-color3 rounded-xl">
+          Join the trip!
+        </button>
+      </div>
+    </div>
+    <!-- Trip information -->
+    <div class="w-[60%]  bg-color px-5 ">
       <p class="text-color4 uppercase">Trip to {{trip.country}} </p>
       <p class="text-color3 text-5xl font-bold uppercase font-secondary my-4" >Discover the <span class="text-color1"> world</span> with our guide</p>
 
@@ -36,33 +56,74 @@
       </div>
 
     </div>
-
+    <!-- What is included in the trip -->
+    <div class="w-[35%] mt-10 ml-2">
+      <ul class="w-full border-2 bg-color rounded-md justify-between p-5">
+        <li class="flex text-color3">
+          <h2 class="text-4xl font-extrabold dark:text-white">What's included:</h2>
+        </li>
+        <hr class="my-5">
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">flight_takeoff</p>
+          <p class="text-color5 w-full">Flight from Barcelona to Bangkok</p>
+        </li>
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">flight_land</p>
+          <p class="text-color5 w-full">Flight from Bangkok to Barcelona</p>
+        </li>
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">bed</p>
+          <p class="text-color5 w-full">10 nights in a shared room for exclusive use of Yatras members</p>
+        </li>
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">coffee</p>
+          <p class="text-color5 w-full">Breakfast included all days</p>
+        </li>
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">directions_car</p>
+          <p class="text-color5 w-full">Taxis for pick-up/drop-off the airport</p>
+        </li>
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">pets</p>
+          <p class="text-color5 w-full">Activity spending the day with elephants at a care center</p>
+        </li>
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">restaurant</p>
+          <p class="text-color5 w-full">Cooking class: We will learn how to prepare traditional Thai food such as curry, spring rolls or mango sticky rice.</p>
+        </li>
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">tour</p>
+          <p class="text-color5 w-full">Visit the imperial palace and pagodas in Bangkok</p>
+        </li>
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">person</p>
+          <p class="text-color5 w-full">Tour coordinator for assistant at any time</p>
+        </li>
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">person</p>
+          <p class="text-color5 w-full">Guides for some activities</p>
+        </li>
+        <li class="flex pb-4">
+          <p class="material-icons pr-5">paid</p>
+          <p class="text-color5 w-full">Free cancellation up to 2 months in advance</p>
+        </li>
+        <hr class="my-5">
+        <li class="flex justify-center items-center">
+          <p class="material-icons pr-2">person</p>
+          <p class="pr-2"> Price per person:</p>
+          <p class="pr-4 text-3xl text-red-800 font-bold">{{trip.price}}€</p>
+          <button (click)="scroll(inscriptionForm)" class="bg-color1 p-2 text-white flex items-center justify-center text-[18px] hover:bg-color3 rounded-xl">
+            Join the trip!
+          </button>
+        </li>
+      </ul>
+    </div>
     <!-- Image carousel -->
-    <div class=" w-full lg:w-[50%] flex flex-col justify-center items-center bg-color5 h-auto pb-8 lg:pb-0 mt-10 lg:mt-0 ">
+    <div class=" w-full flex flex-col justify-center items-center bg-color5 h-auto pb-8 lg:pb-0 mt-20 ">
       <figure class="w-[70%] h-[500px] relative">
         <div class="w-[100%] h-[100%] bg-color4 absolute left-8 top-8"></div>
         <img src="assets/img/{{trip.country}}/description.jpg" alt="" class="w-[100%] h-[100%] absolute z-10 object-cover hover:scale-[.95] transition-all duration-500">
       </figure>
-    </div>
-
-    <!-- Inscription to trip -->
-    <div class="w-[100%] h-20 border-2 shadow bg-white rounded-md flex items-center justify-between m-auto mt-10 px-5">
-      <div class="flex">
-        <p class="material-icons pr-1">calendar_month</p>
-        <p class="pr-2"> First day of the trip: </p>
-        <p class="pr-12 text-color6"> {{trip.start_date | date}}
-        <p class="material-icons pr-1">calendar_month</p>
-        <p class="pr-2"> Last day of the trip: </p>
-        <p class="text-color6"> {{trip.end_date | date}}</p>
-      </div>
-      <div class="flex items-center">
-        <p class="material-icons">person</p>
-        <p class="pr-2"> Price per person: </p>
-        <p class="pr-14 text-color6">{{trip.price}}€</p>
-        <button (click)="scroll(inscriptionForm)" class="bg-color1 p-2 text-white flex items-center justify-center text-[18px] hover:bg-color3 rounded-xl">
-          Join the trip!
-        </button>
-      </div>
     </div>
   </div>
 </div>

@@ -5,6 +5,7 @@ import { Trip } from '../../interfaces/trip';
 import { Chart } from 'chart.js/auto';
 
 
+
 @Component({
   selector: 'app-trip-description',
   templateUrl: './trip-description.component.html',
