@@ -33,6 +33,7 @@ export class TripInscriptionFormComponent implements OnInit {
       address: 'asdf',
     }
   };
+  public formStatus=""
 
   constructor(private formBuilder: FormBuilder, private inscriptionService: InscriptionService) {}
 
@@ -48,13 +49,13 @@ export class TripInscriptionFormComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       email: ['', Validators.required, Validators.email],
       people: ['', Validators.required],
-      allergies: ['', Validators.required],
+      allergies: [''],
       questions: ['']
     })
   }
 
   onSubmit(): void {
-    if (this.tripInscriptionForm.valid || true) {
+    if (this.tripInscriptionForm.valid) {
       let user: User = {
         name: this.tripInscriptionForm.value.name,
         surnames: this.tripInscriptionForm.value.surnames,
@@ -74,6 +75,15 @@ export class TripInscriptionFormComponent implements OnInit {
         questions: this.tripInscriptionForm.value.questions
       };
       this.inscriptionService.putInscription(inscription).subscribe(response => console.log(response));
+      this.formStatus = "Thank you for the inscription! We will contact you soon..."
+    }
+  }
+
+  formChanged() {
+    if (!this.tripInscriptionForm.valid) {
+      this.formStatus = "Inscription not valid, please fill all the required fields";
+    } else {
+      this.formStatus = "";
     }
   }
 }

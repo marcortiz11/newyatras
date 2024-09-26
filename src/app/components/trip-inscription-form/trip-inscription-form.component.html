@@ -4,7 +4,7 @@
       <p class="text-color4 uppercase px-5">Fill the form</p>
       <p class="text-5xl font-secondary text-color3 px-5">Personal <span class="text-color1">Information</span></p>
 
-      <form [formGroup]="tripInscriptionForm" (ngSubmit)="onSubmit()" class="w-[700px] space-y-8 py-8 mx-auto">
+      <form [formGroup]="tripInscriptionForm" (ngSubmit)="onSubmit()" (change)="formChanged()" class="w-[700px] space-y-8 py-8 mx-auto">
           <!-- Name -->
           <div>
             <label class="block text-color3 font-secondary">Name*</label>
@@ -89,9 +89,12 @@
                       class="w-full h-32 p-2 border border-color3 rounded-md text-color6"></textarea>
           </div>
 
-          <!-- Submit Button -->
-          <div class="flex justify-end">
-            <button type="submit" class="px-5 py-2 bg-color1 text-white font-semibold rounded-md">Submit</button>
+            <!-- Submit Button -->
+            <div class="flex justify-between items-center">
+              <p>{{formStatus}}</p>
+              <button type="submit" [disabled]="!tripInscriptionForm.valid" class="px-5 py-2 w-[30%] bg-color1 text-white font-semibold rounded-md">
+                Submit
+              </button>
           </div>
       </form>
     </div>
