@@ -3,26 +3,32 @@
 
   <!-- This is the header of the front page -->
   <div class="w-full flex justify-center">
-        <header class="w-[85%]  xl:w-[73%]  container lg:flex justify-between h-[60px]  items-center py-[45px] border-white border-opacity-40">
-          <nav class="h-[100%] md:w-[70%]">
-              <ul class="h-[100%] flex items-center gap-8 justify-end">
-                  <li class="list-none  "><a class="decoration-none text-white hover:text-color3 transition-all duration-500"
-                          href="">Home</a></li>
-                  <li class="list-none"><a class="decoration-none text-white  hover:text-color3 transition-all duration-500"
-                          href="">About</a></li>
-                  <li class="list-none "><a class="decoration-none text-white  hover:text-color3 transition-all duration-500"
-                          href="">Tours</a></li>
-                  <li class="list-none"><a class="decoration-none text-white  hover:text-color3 transition-all duration-500"
-                          href="">Destination</a></li>
-                  <li class="list-none "><a class="decoration-none text-white  hover:text-color3 transition-all duration-500"
-                          href="">Blog</a></li>
-                  <li class="list-none"><a class="decoration-none text-white  hover:text-color3 transition-all duration-500"
-                          href="">Gallery</a></li>
-                  <li class="list-none"><a class="decoration-none text-white  hover:text-color3 transition-all duration-500"
-                          href="">Contact</a></li>
-              </ul>
-          </nav>
-      </header>
+    <header class="w-[85%]  container justify-between h-[60px] items-center py-[45px] border-white border-opacity-40">
+      <nav class="h-[100%] justify-items-center">
+          <ul class="h-[100%] flex items-center gap-10">
+              <li class="list-none  ">
+                <a class="decoration-none text-white hover:text-color3 transition-all duration-500" href="">
+                  Home
+                </a>
+              </li>
+              <li class="list-none ">
+                <a class="decoration-none text-white  hover:text-color3 transition-all duration-500" (click)="scroll(tripsScheduled)">
+                  Tours
+                </a>
+              </li>
+              <li class="list-none">
+                <a class="decoration-none text-white  hover:text-color3 transition-all duration-500" (click)="scroll(aboutMe)">
+                  About
+                </a>
+              </li>
+              <li class="list-none">
+                <a class="decoration-none text-white  hover:text-color3 transition-all duration-500" (click)="scroll(aboutMe)">
+                  Contact
+                </a>
+              </li>
+          </ul>
+      </nav>
+    </header>
   </div>
 
   <!-- This is title of the front page -->
@@ -62,6 +68,10 @@
 </div>
 
 
-<app-trips-schedulled style="height:100vh"></app-trips-schedulled>
+<div #tripsScheduled>
+  <app-trips-schedulled style="height:100vh"></app-trips-schedulled>
+</div>
 
-<app-contact style="height:100vh"></app-contact>
+<div #aboutMe>
+  <app-contact style="height:100vh"></app-contact>
+</div>
