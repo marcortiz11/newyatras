@@ -119,11 +119,8 @@
       </ul>
     </div>
     <!-- Image carousel -->
-    <div class=" w-full flex flex-col justify-center items-center bg-color5 h-auto pb-8 lg:pb-0 mt-20 ">
-      <figure class="w-[70%] h-[500px] relative">
-        <div class="w-[100%] h-[100%] bg-color4 absolute left-8 top-8"></div>
-        <img src="assets/img/{{trip.country}}/description.jpg" alt="" class="w-[100%] h-[100%] absolute z-10 object-cover hover:scale-[.95] transition-all duration-500">
-      </figure>
+    <div class="flex w-full h-full">
+      <app-carousel [slides]="slides"></app-carousel>
     </div>
   </div>
 </div>

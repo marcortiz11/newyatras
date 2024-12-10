@@ -13,6 +13,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { MatGridList, MatGridTile } from "@angular/material/grid-list";
 import { AppRoutingModule } from './app-routing.module';
 import { MatIcon } from "@angular/material/icon";
+import {CarouselComponent} from "./components/shared/carousel/carousel.component";
 
 
 @NgModule({
@@ -22,15 +23,16 @@ import { MatIcon } from "@angular/material/icon";
     RootComponent,
     TripDescriptionComponent
   ],
-  imports: [
-    BrowserModule,
-    MatGridList,
-    MatGridTile,
-    AppRoutingModule,
-    TripInscriptionFormComponent,
-    MatIcon,
-    ContactComponent,
-  ],
+    imports: [
+        BrowserModule,
+        MatGridList,
+        MatGridTile,
+        AppRoutingModule,
+        TripInscriptionFormComponent,
+        MatIcon,
+        ContactComponent,
+        CarouselComponent,
+    ],
   exports: [
     FrontPageComponent,
     TripsSchedulledComponent,

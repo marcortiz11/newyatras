@@ -24,6 +24,7 @@ export class TripDescriptionComponent implements OnInit {
     num_people: 0
   };
   public charts: Array<any> = [];
+  public slides: Array<string> = [];
 
   constructor(private route: ActivatedRoute, private tripService: TripService) {}
 
@@ -33,17 +34,28 @@ export class TripDescriptionComponent implements OnInit {
       this.fetchTrip(params['name'])
     });
     this.createChart();
+    this.loadSlides()
   }
 
   private fetchTrip(tripId: string): void {
     this.tripService.getTrip(1).subscribe(
       (response: any) => {
         this.trip = response;
+        console.log(response)
+        console.log(this.trip)
       },
       (error: any) => {
-        console.log("Error");
+        console.log(error);
       },
     );
+  }
+
+  private loadSlides(): void {
+    this.slides = [
+      '/assets/img/Thailand/description/description.jpg',
+      '/assets/img/Thailand/description/description_2.jpg',
+      '/assets/img/Thailand/description/description_3.jpg',
+    ]
   }
 
   public createChart(): void {
